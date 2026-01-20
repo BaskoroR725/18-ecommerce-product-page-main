@@ -5,8 +5,8 @@
   border-bottom: 1px solid var(--light-grayish-blue);
 
   @media (min-width: 48rem) {
-    height: 7rem;
-    margin-bottom: 5rem;
+    height: 6rem;
+    margin-bottom: 2rem;
   }
 
   &__container {
@@ -14,6 +14,7 @@
     align-items: center;
     height: 100%;
     gap: 1rem;
+    padding-inline: 0;
   }
 
   &__toggle {

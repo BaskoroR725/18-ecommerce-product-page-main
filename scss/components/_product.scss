@@ -4,11 +4,15 @@
   padding-block: 1.5rem;
 
   @media (min-width: 48rem){
+    max-width: 70rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5rem;
     align-items: center;
-    padding-block: 5rem;
+    margin-block-start: 2rem;
   }
 
   &__info-container {
