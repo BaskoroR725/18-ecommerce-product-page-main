@@ -1,0 +1,91 @@
+@use "../abstracts/variables" as *;
+
+.header {
+  height: 4.25rem; //68px
+  border-bottom: 1px solid var(--light-grayish-blue);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 1rem;
+  }
+
+  &__toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin-inline-start: -0.5rem;
+  }
+
+  &__nav {
+    display: none;
+    &.is-open {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: var(--white);
+      z-index: 100;
+      width: 65%;
+      padding: 1.5rem;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    font-weight: var(--fw-bold);
+    margin-top: 3rem;
+  }
+
+  &__cart-profile {
+    margin-inline-start: auto;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  &__cart-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  }
+
+  &__cart-count {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 0.6rem;
+    font-weight: var(--fw-bold);
+    padding-inline: 0.5rem;
+    border-radius: 1rem;
+  }
+
+  &__profile {
+    border: none;
+  }
+
+  &__avatar {
+    width: 1.5rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 50%;
+
+
+    outline-offset: 2px;
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--orange);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--orange);
+    }
+  }
+}
