@@ -1,3 +1,43 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-main);
+  background-color: var(--white);
+  color: var(--very-dark-blue);
+  min-height: 100vh;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+ul[role=list], ol[role=list] {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 :root {
   --orange: hsl(26, 100%, 55%);
   --pale-orange: hsl(25, 100%, 94%);
@@ -12,10 +52,32 @@
   --fw-bold: 700;
 }
 
-body {
-  font-family: var(--font-main);
-  background-color: var(--white);
-  color: var(--very-dark-blue);
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  max-width: 70rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.attribution {
+  font-size: 0.7rem;
+  text-align: center;
+  margin-block: 2rem;
+}
+.attribution a {
+  color: var(--orange);
+  font-weight: var(--fw-bold);
 }
 
 /*# sourceMappingURL=style.css.map */

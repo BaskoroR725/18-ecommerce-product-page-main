@@ -1,71 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght,YOPQ@100..900,300&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <title>Frontend Mentor | E-commerce product page</title>
-</head>
-<body>
-  <header class='header'>
-    <div class="header__container container">
-      <button class='header__toggle' aria-controls='primary-navigation' aria-expanded='false'>
-        <img src="images/icon-menu.svg" alt="" aria-hidden='true'>
-        <span class='sr-only'>Menu</span>
-      </button>
+    <link rel="stylesheet" href="css/style.css" />
 
-      <a href="/" class='header__logo'>
-        <img src="images/logo.svg" alt="sneakers home">
-      </a>
-
-      <nav class='header__nav' id='primary-navigation'>
-        <ul class='header__list' role='list'>
-          <li><a href="#" class='header__link'>Collections</a></li>
-          <li><a href="#" class='header__link'>Men</a></li>
-          <li><a href="#" class='header__link'>Women</a></li>
-          <li><a href="#" class='header__link'>About</a></li>
-          <li><a href="#" class='header__link'>Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class='header__cart-profile'>
-        <button class='header__cart-btn' aria-label='View cart'>
-          <img src="images/icon-cart.svg" alt="" aria-hidden='true'>
-          <span class='header__cart-count'>3</span>
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <button
+          class="header__toggle"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+        >
+          <img src="images/icon-menu.svg" alt="" aria-hidden="true" />
+          <span class="sr-only">Menu</span>
         </button>
-        <button class='header__profile'>
-          <img src="images/image-avatar.png" alt="User Avatar" class='header__avatar'>
-        </button>
+
+        <a href="/" class="header__logo">
+          <img src="images/logo.svg" alt="sneakers home" />
+        </a>
+
+        <nav class="header__nav" id="primary-navigation">
+          <ul class="header__list" role="list">
+            <li><a href="#" class="header__link">Collections</a></li>
+            <li><a href="#" class="header__link">Men</a></li>
+            <li><a href="#" class="header__link">Women</a></li>
+            <li><a href="#" class="header__link">About</a></li>
+            <li><a href="#" class="header__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header__cart-profile">
+          <button class="header__cart-btn" aria-label="View cart">
+            <img src="images/icon-cart.svg" alt="" aria-hidden="true" />
+            <span class="header__cart-count">3</span>
+          </button>
+          <button class="header__profile">
+            <img
+              src="images/image-avatar.png"
+              alt="User Avatar"
+              class="header__avatar"
+            />
+          </button>
+        </div>
       </div>
+    </header>
 
-    </div>
-  </header> 
+    <main>
+      <article class="product container">
+        <section class="product__gallery"></section>
 
-  Sneaker Company
+        <section class="product__info" aria-label="Product Description">
+          <p class="product__subtitle">Sneaker Company</p>
+          <h1 class="product__title">Fall Limited Edition Sneakers</h1>
+          <p class="product__description">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
 
-  Fall Limited Edition Sneakers
+          <div class="product__price-group">
+            <div class="product__price-current">
+              <span class="product__price">$125.00</span>
+              <span class="product__discount">50%</span>
+            </div>
+            <del class="product__price-old">$250.00</del>
+          </div>
 
-  These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer.
+          <div class="product__actions">
+            <div class="product__quantity-selector">
+              <button aria-label="Decrease quantity">-</button>
+              <span class="product__quantity">0</span>
+              <button aria-label="Increase quantity">+</button>
+            </div>
+            <button class="product__add-btn">
+              <img src="images/icon-cart.svg" alt="" aria-hidden="true" />
+              Add to cart
+            </button>
+          </div>
+        </section>
+      </article>
+    </main>
 
-  $125.00
-  50%
-  $250.00
-
-  0
-  Add to cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/BaskoroR725">Baskoro Ramadhan</a>.
+    </footer>
+  </body>
 </html>

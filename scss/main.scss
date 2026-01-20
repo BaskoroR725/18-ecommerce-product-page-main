@@ -2,8 +2,6 @@
 
 @use 'abstracts/variables';
 
-body {
-  font-family: var(--font-main);
-  background-color: var(--white);
-  color: var(--very-dark-blue);
-}
+@use 'components/sr-only';
+@use 'components/layout';
+

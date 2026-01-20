@@ -1,0 +1,16 @@
+.container {
+  max-width: 70rem; // around 1120px
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.attribution {
+  font-size: 0.7rem;
+  text-align: center;
+  margin-block: 2rem;
+
+  a {
+    color: var(--orange);
+    font-weight: var(--fw-bold);
+  }
+}
