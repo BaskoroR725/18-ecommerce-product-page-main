@@ -6,6 +6,11 @@
     position: relative;
     aspect-ratio: 1 / 1;
     width: 100%;
+
+    @media(min-width: 48rem){
+      border-radius: 1rem;
+      cursor: pointer;
+    }
   }
 
   &__img {
@@ -30,10 +35,46 @@
 
     &--prev { left: 1rem; }
     &--next { right: 1rem; }
+
+    @media (min-width: 48rem) {
+      display: none; 
+    }
   }
 
   &__thumbnails {
     display: none;
+
+    @media (min-width: 48rem) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &__thumbnail {
+    cursor: pointer;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: var(--white);
+    border: 2px solid transparent;
+    transition: all 0.2s;
+
+    img {
+      transition: opacity 0.2s;
+    }
+
+    &:hover img {
+      opacity: 0.5;
+    }
+
+    &--active{
+      border-color: var(--orange);
+      img {
+        opacity: 0.3;
+      }
+    }
+
   }
 
 }

@@ -3,6 +3,20 @@
 .product {
   padding-block: 1.5rem;
 
+  @media (min-width: 48rem){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+    padding-block: 5rem;
+  }
+
+  &__info-container {
+    @media (min-width: 48rem){
+      padding: 0;
+    }
+  }
+
   &__subtitle {
     color: var(--dark-grayish-blue);
     text-transform: uppercase;
