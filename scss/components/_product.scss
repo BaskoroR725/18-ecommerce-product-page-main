@@ -1,0 +1,68 @@
+@use '../abstracts/variables' as *;
+
+.product {
+  padding-block: 1.5rem;
+
+  &__subtitle {
+    color: var(--dark-grayish-blue);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+    font-weight: var(--fw-bold);
+    margin-bottom: 0.75rem;
+  }
+
+  &__title {
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    line-height: 1.1;
+    color: var(--very-dark-blue);
+    margin-block-end: 1rem;
+  }
+
+  &__description {
+    color: var(--dark-grayish-blue);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-block-end: 1.5rem;
+  }
+
+  // Price
+  &__price-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 48rem) { 
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__price-current {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__price {
+    font-size: 1.75rem;
+    font-weight: var(--fw-bold);
+    color: var(--very-dark-blue);
+  }
+
+  &__discount {
+    background-color: var(--black-75);
+    color: var(--white);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.3rem;
+    font-weight: var(--fw-bold);
+  }
+
+  &__price-old {
+    color: var(--grayish-blue);
+    font-weight: var(--fw-bold);
+    text-decoration: line-through;
+  }
+
+}
