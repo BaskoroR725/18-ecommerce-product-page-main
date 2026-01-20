@@ -21,14 +21,36 @@
 
   &__nav {
     display: none;
+    &.isopen:before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: var(--black-75);
+      z-index: -1;
+    }
+
     &.is-open {
       display: block;
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
       background: var(--white);
       z-index: 100;
       width: 65%;
       padding: 1.5rem;
+    }
+
+    &__close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-block-end: 3rem;
+      display: block;
+
+      @media (min-width: 48rem) {
+        display: none;
+      }
     }
   }
 
@@ -75,7 +97,6 @@
     cursor: pointer;
     border: 2px solid transparent;
     border-radius: 50%;
-
 
     outline-offset: 2px;
 
