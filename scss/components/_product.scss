@@ -104,6 +104,9 @@
     border-radius: 0.5rem;
     font-weight: var(--fw-bold);
 
+    user-select: none;
+    -webkit-user-select:none;
+
     @media (min-width: 48rem) {
       flex: 0.4;
     }

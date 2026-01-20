@@ -114,6 +114,7 @@
   }
 
   &__cart-profile {
+    position: relative;
     margin-inline-start: auto;
     display: flex;
     align-items: center;
@@ -161,3 +162,4 @@
     }
   }
 }
+
