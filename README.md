@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution url](https://github.com/BaskoroR725/11-time-tracking-js-fetch.git)
-- Live Site URL: [Live site](https://baskoror725.github.io/11-time-tracking-js-fetch/)
+- Solution URL: [Solution url](https://github.com/BaskoroR725/18-ecommerce-product-page-main.git)
+- Live Site URL: [Live site](https://baskoror725.github.io/18-ecommerce-product-page-main/)
 
 ## My process
 
