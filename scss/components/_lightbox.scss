@@ -1,0 +1,91 @@
+@use '../abstracts/variables' as *;
+
+.lightbox {
+  display: none; 
+
+  @media (min-width: 48rem) {
+    position: fixed;
+    inset: 0;
+    background-color: var(--black-75);
+    z-index: 2000;
+    display: none; 
+    place-items: center;
+    padding: 2rem;
+
+    &.is-open {
+      display: grid; 
+    }
+  }
+
+  &__container {
+    max-width: 35rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__main-img {
+    border-radius: 1rem;
+    width: 100%;
+    display: block;
+  }
+
+  &__close {
+    align-self: flex-end; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    
+    svg path {
+      fill: var(--white);
+      transition: fill 0.2s;
+    }
+
+    &:hover svg path {
+      fill: var(--orange);
+    }
+  }
+
+  #lightbox-prev, 
+  #lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: var(--white);
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+
+    &:hover {
+      img { 
+        filter: invert(52%) sepia(95%) saturate(3052%) hue-rotate(345deg) brightness(100%) contrast(101%); 
+        // Make icon orange
+      }
+    }
+  }
+
+  #lightbox-prev {
+    left: 0;
+    transform: translate(-50%, -50%); 
+  }
+
+  #lightbox-next {
+    right: 0;
+    transform: translate(50%, -50%); 
+  }
+}

@@ -40,6 +40,10 @@
         </a>
 
         <nav class="header__nav" id="primary-navigation">
+          <button class="header__nav--close" id="menu-close">
+            <img src="images/icon-close.svg" alt="close menu">
+          </button>
+          
           <ul class="header__list" role="list">
             <li><a href="#" class="header__link">Collections</a></li>
             <li><a href="#" class="header__link">Men</a></li>
@@ -61,7 +65,7 @@
 
           <button class="header__cart-btn" aria-label="View cart">
             <img src="images/icon-cart.svg" alt="" aria-hidden="true" />
-            <span class="header__cart-count" style="display: none;">0</span>
+            <span class="header__cart-count" style="display: none">0</span>
           </button>
           <button class="header__profile">
             <img
@@ -86,7 +90,8 @@
             </button>
 
             <img
-              src="images/image-product-1-thumbnail.jpg"
+              id="main-product-image"
+              src="images/image-product-1.jpg"
               alt="Fall Limited Edition Sneakers"
               class="gallery__img"
             />
@@ -126,6 +131,45 @@
             </button>
           </div>
         </section>
+
+        <div class="lightbox" id="product-lightbox">
+          <div class="lightbox__container">
+            <button class="lightbox__close" aria-label="Close lightbox">
+              <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.597L11.596.782Z"
+                  fill="#FFF"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <div class="lightbox__content">
+              <button
+                class="gallery__btn"
+                id="lightbox-prev"
+                aria-label="Previous image"
+              >
+                <img src="images/icon-previous.svg" alt="Previous" />
+              </button>
+
+              <img
+                src="images/image-product-1.jpg"
+                alt=""
+                class="lightbox__main-img"
+                id="lightbox-main-img"
+              />
+
+              <button
+                class="gallery__btn gallery__btn--next"
+                id="lightbox-next"
+                aria-label="Next image"
+              >
+                <img src="images/icon-next.svg" alt="Next" />
+              </button>
+            </div>
+          </div>
+        </div>
 
         <section
           class="product__info container"

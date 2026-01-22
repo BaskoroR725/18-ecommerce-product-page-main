@@ -1,12 +1,13 @@
 @use "../abstracts/variables" as *;
 
 .header {
-  height: 4.25rem; //68px
+  height: 4.25rem;
   border-bottom: 1px solid var(--light-grayish-blue);
+  position: relative;
 
   @media (min-width: 48rem) {
-    height: 6rem;
-    margin-bottom: 2rem;
+    height: 7rem; 
+    margin-bottom: 2.5rem;
   }
 
   &__container {
@@ -14,7 +15,10 @@
     align-items: center;
     height: 100%;
     gap: 1rem;
-    padding-inline: 0;
+    
+    @media (min-width: 48rem) {
+      gap: 3.5rem;
+    }
   }
 
   &__toggle {
@@ -30,47 +34,74 @@
   }
 
   &__nav {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 65%;
+    background: var(--white);
+    z-index: 5000;
+    padding: 1.5rem;
+    
+    // Effect transition
+    transform: translateX(-100%); // to left
+    visibility: hidden;           
+    opacity: 0;                  
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease, visibility 0.3s;
+
+    &--active {
+      display: block ;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 65%;
+      background: var(--white);
+      z-index: 5000;
+      padding: 1.5rem;
+      box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.75);
+
+      transform: translateX(0);
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &--close {
+      background:none; 
+      border:none; 
+      margin-bottom: 2rem; 
+      cursor:pointer;
+
+      @media (min-width: 48rem){
+        display: none;
+      }
+    }
 
     @media (min-width: 48rem) {
-      display: block;
+      display: block; 
       position: static;
       height: 100%;
       width: auto;
       padding: 0;
       background: none;
+      box-shadow: none;
+
+      transform: translateX(0);
+      visibility: visible;
+      opacity: 1;
+      transition: none;
     }
+  }
 
-    &.isopen:before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: var(--black-75);
-      z-index: -1;
-    }
+  &__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 3rem;
+    display: block;
 
-    &.is-open {
-      display: block;
-      position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      background: var(--white);
-      z-index: 999;
-      width: 65%;
-      padding: 1.5rem;
-    }
-
-    &__close {
-      background: none;
-      border: none;
-      cursor: pointer;
-      margin-block-end: 3rem;
-      display: block;
-
-      @media (min-width: 48rem) {
-        display: none;
-      }
+    @media (min-width: 48rem) {
+      display: none;
     }
   }
 
@@ -79,19 +110,19 @@
     flex-direction: column;
     gap: 1.25rem;
     font-weight: var(--fw-bold);
-    margin-top: 3rem;
 
     @media (min-width: 48rem) {
       flex-direction: row;
       height: 100%;
-      margin-top: 0;
       gap: 2rem;
+      font-weight: var(--fw-reg);
+
+      transition: opacity 0.4s ease 0.2s;
     }
   }
 
   &__link {
     color: var(--dark-grayish-blue);
-    font-weight: var(--fw-reg);
     height: 100%;
     display: flex;
     align-items: center;
@@ -102,23 +133,32 @@
       color: var(--very-dark-blue);
 
       &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background-color: var(--orange);
+        @media (min-width: 48rem) {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background-color: var(--orange);
+        }
       }
     }
   }
 
   &__cart-profile {
-    position: relative;
-    margin-inline-start: auto;
+    border: none;
+    background: none;
+    margin-inline-start: auto; 
     display: flex;
+    position: relative;
     align-items: center;
-    gap: 1.25rem;
+    gap: 1rem;
+    min-width: max-content;
+
+    @media (min-width: 48rem) {
+      gap: 2.5rem;
+    }
   }
 
   &__cart-btn {
@@ -142,24 +182,31 @@
 
   &__profile {
     border: none;
+    background: none;
   }
 
   &__avatar {
     width: 1.5rem;
+    height: 1.5rem;
     cursor: pointer;
-    border: 2px solid transparent;
     border-radius: 50%;
+    display: block;
+    transition: transform 0.2s, ring 0.2s;
+    object-fit: cover;
+    flex-shrink: 0;
 
-    outline-offset: 2px;
-
-    &:hover,
-    &:focus-visible {
-      border-color: var(--orange);
+    @media (min-width: 48rem) {
+      width: 3.125rem; 
+      height: 3.125rem;
     }
 
-    &:focus-visible {
-      outline: 2px solid var(--orange);
+    &:hover {
+      box-shadow: 0 0 0 2px var(--orange);
     }
   }
-}
 
+    .stop-transitions * {
+    transition: none;
+  }
+
+}
